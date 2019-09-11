@@ -4,12 +4,11 @@ import axios from 'axios';
 
 export default function PhotoGrid () {
     const [photo, setPhoto] = useState([])
-
     useEffect(() => {
         axios
         .get('https://api.nasa.gov/planetary/apod?api_key=nKLSHkTvuo8u7mPb7UKNQm0wfBUJlrFtgaRdyZhd')
         .then(response => {
-            const photoInfo = response.data.url
+            const photoInfo = response.data
             console.log(photoInfo);
             setPhoto(photoInfo)
         })
@@ -20,7 +19,7 @@ export default function PhotoGrid () {
 
     return(
         <div className ="container">
-            <PhotoCard key={photo} imgUrl={photo}/>
+            <PhotoCard key={photo} imgUrl={photo.url} explanation={photo.explanation}/>
         </div>
     )
 }
