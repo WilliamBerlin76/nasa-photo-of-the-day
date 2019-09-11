@@ -1,12 +1,11 @@
 import React from "react";
-import "../../src/App.css/";
 
-const photoCard = props =>{
+const PhotoCard = props =>{
     return(
-        <div className="card">
-            <img className='spaceImage' alt="space image" src="{props.imgURL}"></img>
+        <div className="card" key={props.id}>
+            <img className='spaceImage' alt="space image" src={props.imgUrl}></img>
         </div>
     );
 };
 
-export default photoCard;
+export default PhotoCard;
