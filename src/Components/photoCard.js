@@ -1,12 +1,26 @@
 import React from "react";
+import styled from "styled-components";
 
+const Container = styled.div`
+    margin: 0 auto;
+    width: 80%;
+`;
+
+const SpaceImage = styled.img`
+    max-width: 850px;
+    width: 100%
+`;
+
+const PictureExplanation = styled.p`
+    text-align: center;
+`;
 const PhotoCard = props =>{
     return(
-        <div className="card" key={props.id}>
+        <Container key={props.id}>
             <h3 className='photoTitle'>{props.title}</h3>
-            <img className='spaceImage' alt="space image" src={props.imgUrl}></img>
-            <p className='photoExplanation'>{props.explanation}</p>
-        </div>
+            <SpaceImage alt="Picture of the Day" src={props.imgUrl}></SpaceImage>
+            <PictureExplanation>{props.explanation}</PictureExplanation>
+        </Container>
     );
 };
 

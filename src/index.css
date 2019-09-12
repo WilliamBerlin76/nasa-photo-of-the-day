@@ -12,15 +12,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-.container{
-  margin: 0 auto;
-  width: 80%
-}
-.spaceImage{
-  max-width: 850px;
-  width: 100%
-}
-.photoExplanation{
-  text-align: center;
-}
+};
