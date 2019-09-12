@@ -19,7 +19,7 @@ export default function PhotoGrid () {
 
     return(
         <div className ="container">
-            <PhotoCard key={photo} title={photo.title} imgUrl={photo.hdurl} explanation={photo.explanation}/>
+            <PhotoCard key={photo} title={photo.title} imgUrl={photo.url} explanation={photo.explanation}/>
         </div>
     )
 }
