@@ -12,6 +12,7 @@ export default function PhotoGrid () {
         console.log(value);
     };
     const handleSubmit = event => {
+        setValue(event.target.value)
         event.preventDefault()
         setPhotoDate(value);
     };
@@ -29,7 +30,6 @@ export default function PhotoGrid () {
     }, [photoDate])
 
     const SearchButton = styled.button`
-        margin-top: 10px;
         color: #4B0082;
         background: silver;
         border: 0px solid silver;
@@ -44,19 +44,19 @@ export default function PhotoGrid () {
             color: silver
         }
     `;
-  
+    const InputField = styled.input`
+        height: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 20px;
+    `;
     const FillableForm = styled.form`
-        margin: 0 auto;
         font-size: 18px;
-        display: flex;
-        flex-direction: column;
-        width: 150px;
-        align-items: center;
     `;
     return(
         <div className ="container">
              <FillableForm onSubmit={handleSubmit}>Enter Date: 
-               <input type="text" value={value} onChange={handleChange} placeholder="yyyy-mm-dd"></input>
+               <InputField type="text" value={value} onChange={handleChange} placeholder="yyyy-mm-dd" autoFocus></InputField>
                <SearchButton type="submit">Submit Date</SearchButton>
             </FillableForm>
             <PhotoCard key={photo} title={photo.title} imgUrl={photo.url} explanation={photo.explanation}/>
